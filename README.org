@@ -1,0 +1,4 @@
+
+* Fourvis: Visualizing light paths around a black hole.
+  
+  #+html: <p align="center"><img src="images/png/checker_60M.png" /></p>
