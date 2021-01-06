@@ -1,4 +1,23 @@
 
 * Fourvis: Visualizing light paths around a black hole.
   
-  #+html: <p align="center"><img src="images/png/checker_60M.png" width="400" height="400" /></p>
+#+html: <p align="center"><img src="images/png/checker_60M.png" width="400" height="400" /></p>
+
+General Relativity predicts that light rays travel along paths that
+are determined by the spacetime metric. The metric used to analyze the
+space around the black hole is the Schwarzschild metric. Although the
+Schwarzschild metric does not describe the spacetime geometry for the
+region where the coordinate radius is less than the Schwarzschild
+radius, it is appropriate to use this simple metric because the light
+rays that enter the region inside of the Schwarzschild radius will
+enter into a plunge orbit. Therefore, those instances do not need to
+be simulated here, as it will have no effect on the image
+produced. Instead, we reason that the light rays with an impact
+parameter that is less than the Schwarzschild radius will inevitably
+enter into a plunge orbit and choose not to simulate those light rays
+at all.
+
+The paths taken by the light rays around a black hole are described by
+the differential equations:
+#+html: <p align="center"><img src="images/latex_snippets/light_ray_diff_eq.png" /></p>
+
