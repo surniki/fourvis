@@ -1,7 +1,7 @@
 
 * Fourvis: Visualizing light paths around a black hole.
   
-#+html: <p align="center"><img src="images/png/checker_60M.png" width="400" height="400" /></p>
+#+html: <p align="center"><img src="images/png/checker_60M.png" width="400" /></p>
 
 General Relativity predicts that light rays travel along paths that
 are determined by the spacetime metric. The metric used to analyze the
@@ -12,12 +12,23 @@ radius, it is appropriate to use this simple metric because the light
 rays that enter the region inside of the Schwarzschild radius will
 enter into a plunge orbit. Therefore, those instances do not need to
 be simulated here, as it will have no effect on the image
-produced. Instead, we reason that the light rays with an impact
+produced. Instead, it is reasoned that the light rays with an impact
 parameter that is less than the Schwarzschild radius will inevitably
-enter into a plunge orbit and choose not to simulate those light rays
-at all.
+enter into a plunge orbit. It follows that the light rays within the
+region can be omitted from the simulation since the outcome is known
+already.
 
 The paths taken by the light rays around a black hole are described by
 the differential equations:
 #+html: <p align="center"><img src="images/latex_snippets/light_ray_diff_eq.png" /></p>
-
+which are derived from the Schwarzschild metric and listed as
+equations (9.59) and (9.63) in "Gravity: An introduction to Einstein's
+General Relativity" by James B. Hartle. Note that the angular momentum
+and the impact parameter are constants due to the spherical symmetry
+present in the Schwarzschild metric. These differential equations
+describe the change in the radial and the azimuthal angle coordinates
+with respect to the affine parameter. The two differential equations
+are simplified by absorbing the angular momentum term into the affine
+parameter, yielding the following equations that are numerically
+integrating in the simulation.
+#+html: <p align="center"><img src="images/latex_snippets/final_light_ray_diff_eq.png" /></p>
