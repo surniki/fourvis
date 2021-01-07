@@ -9,14 +9,10 @@ space around the black hole is the Schwarzschild metric. Although the
 Schwarzschild metric does not describe the spacetime geometry for the
 region where the coordinate radius is less than the Schwarzschild
 radius, it is appropriate to use this simple metric because the light
-rays that enter the region inside of the Schwarzschild radius will
-enter into a plunge orbit. Therefore, those instances do not need to
-be simulated here, as it will have no effect on the image
-produced. Instead, it is reasoned that the light rays with an impact
-parameter that is less than the Schwarzschild radius will inevitably
-enter into a plunge orbit. It follows that the light rays within the
-region can be omitted from the simulation since the outcome is known
-already.
+rays that enter the region inside of the Schwarzschild radius are
+light rays that enter into a plunge orbit. Therefore, those instances
+do not need to be simulated here, as it will have no effect on the
+image produced.
 
 The paths taken by the light rays around a black hole are described by
 the differential equations:
@@ -28,23 +24,30 @@ and the impact parameter are constants due to the spherical symmetry
 present in the Schwarzschild metric. These differential equations
 describe the change in the radial and the azimuthal angle coordinates
 with respect to the affine parameter. The two differential equations
-are simplified by both only considering the equatorial plane and by
-absorbing the angular momentum term into the affine parameter,
-yielding the following equations that are numerically integrated in
-the simulation.
+are simplified by only considering the equatorial plane and by
+absorbing the angular momentum term into the affine parameter. These
+changes yield the following equations that are numerically integrated
+in the simulation.
 #+html: <p align="center"><img src="images/latex_snippets/final_light_ray_diff_eq.png" /></p>
 
 The visualizations are produced by using a raytracing algorithm where
 the dynamics of the light ray are described by the above
-equation. From the camera in the scene, a series of light rays are
+equations. From the camera in the scene, a series of light rays are
 simulated that are aimed towards an infinitely spanning, perfectly
 illuminated background. The light rays are then marched towards that
 background by integrating the differential equations. The light ray
 curves accordingly, as the only orbits that are simulated are ones
-that scatter away from the black hole. The following are some images
+that scatter away from the black hole. When the light ray intersects
+the background, the color of the background at that location is
+calculated and presented as a pixel on the image produced. Even though
+only the equatorial plane is simulated, we can fill in the other
+pixels by using the spherical symmetry of the black hole.
+
+The following are some images
 that have been produced from the simulation, paired with an image of
 how the background would appear if a black hole was not present in the
 scene.
 #+html: <p align="center"><img src="images/png/background_default_30M.png" width="200" /><img src="images/png/default_30M.png" width="200" /></p>
 #+html: <p align="center"><img src="images/png/background_quadrant_30M.png" width="200" /><img src="images/png/quadrant_30M.png" width="200" /></p>
 #+html: <p align="center"><img src="images/png/background_checker_30M.png" width="200" /><img src="images/png/checker_30M.png" width="200" /></p>
+#+html: <p align="center"><img src="images/png/background_checker_60M.png" width="200" /><img src="images/png/checker_60M.png" width="200" /></p>
