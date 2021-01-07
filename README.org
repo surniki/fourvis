@@ -28,7 +28,23 @@ and the impact parameter are constants due to the spherical symmetry
 present in the Schwarzschild metric. These differential equations
 describe the change in the radial and the azimuthal angle coordinates
 with respect to the affine parameter. The two differential equations
-are simplified by absorbing the angular momentum term into the affine
-parameter, yielding the following equations that are numerically
-integrating in the simulation.
+are simplified by both only considering the equatorial plane and by
+absorbing the angular momentum term into the affine parameter,
+yielding the following equations that are numerically integrated in
+the simulation.
 #+html: <p align="center"><img src="images/latex_snippets/final_light_ray_diff_eq.png" /></p>
+
+The visualizations are produced by using a raytracing algorithm where
+the dynamics of the light ray are described by the above
+equation. From the camera in the scene, a series of light rays are
+simulated that are aimed towards an infinitely spanning, perfectly
+illuminated background. The light rays are then marched towards that
+background by integrating the differential equations. The light ray
+curves accordingly, as the only orbits that are simulated are ones
+that scatter away from the black hole. The following are some images
+that have been produced from the simulation, paired with an image of
+how the background would appear if a black hole was not present in the
+scene.
+#+html: <p align="center"><img src="images/png/background_default_30M.png" width="200" /><img src="images/png/default_30M.png" width="200" /></p>
+#+html: <p align="center"><img src="images/png/background_quadrant_30M.png" width="200" /><img src="images/png/quadrant_30M.png" width="200" /></p>
+#+html: <p align="center"><img src="images/png/background_checker_30M.png" width="200" /><img src="images/png/checker_30M.png" width="200" /></p>
